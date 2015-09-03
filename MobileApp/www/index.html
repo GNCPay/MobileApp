@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; media-src *">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>TapPay eWallet</title>
+
+
+    <!-- ionic css -->
+    <link href="css/ionic.min.css" rel="stylesheet">
+    <link href="css/ionicons.min.css" rel="stylesheet" />
+    <!-- your app's css -->
+    <!--<link href="css/bootstrap.min.css" rel="stylesheet" />-->
+    <link href="css/app.css" rel="stylesheet">
+    <!-- angularjs scripts -->
+
+    <script src="js/vendor/ionic/ionic.min.js"></script>
+    <script src="js/vendor/angular/angular.min.js"></script>
+    <script src="js/vendor/angular/angular-animate.min.js"></script>
+    <script src="js/vendor/angular/angular-resource.min.js"></script>
+    <script src="js/vendor/angular/angular-sanitize.min.js"></script>
+    <script src="js/vendor/angular/angular-ui-router.min.js"></script>
+    <script src="js/vendor/ionic/ionic-angular.min.js"></script>
+
+    <!-- cordova script -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's script -->
+    <script src="scripts/index.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/services.js"></script>
+    <script src="js/controllers.js"></script>
+</head>
+
+<!-- 'sideMenuApp' is the name of this angular module (js/app.js)-->
+<body ng-app="sideMenuApp">
+
+    <div ng-controller="MenuController">
+        <div class="container-fluid fixed">
+            <div id="content">
+                <ion-side-menus>
+
+                    <!-- Center content -->
+                    <ion-pane ion-side-menu-content>
+                        <ion-nav-bar type="bar-assertive" back-button-type="button-icon" back-button-icon="ion-arrow-left-c"></ion-nav-bar>
+
+                        <ion-nav-view></ion-nav-view>
+                    </ion-pane>
+
+                    <!-- Left Side Menu -->
+                    <ion-side-menu side="left">
+                        <ion-header-bar class="bar bar-header bar-assertive">
+                            <h1 class="title">Menu</h1>
+                        </ion-header-bar>
+                        <ion-content has-header="true">
+                            <ion-list>
+                                <ion-item ng-click="goTo(item.link)" class="item item-icon-left" ng-repeat="item in list">
+                                    <i ng-class="item.iconClass"></i>
+                                    {{item.text}}
+                                </ion-item>
+                            </ion-list>
+                        </ion-content>
+                    </ion-side-menu>
+
+                </ion-side-menus>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/platformOverrides.js"></script>
+
+    <!--jQuery & Bootstrap-->
+    <script src="scripts/jquery-1.9.1.min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+
+    <!--ngCordova-->
+    <script src="scripts/ng-cordova.min.js"></script>
+    <script src="scripts/ng-cordova-mocks.min.js"></script>
+</body>
+</html>
